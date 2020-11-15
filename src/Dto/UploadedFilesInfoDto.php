@@ -1,0 +1,43 @@
+<?php
+
+namespace Do6po\LaravelJodit\Dto;
+
+final class UploadedFilesInfoDto
+{
+    /**
+     * @var
+     */
+    private $url;
+
+    /**
+     * @var
+     */
+    private $files;
+
+    private function __construct()
+    {
+    }
+
+    public static function byDirUrlAndFiles(string $url, array $files): self
+    {
+        $self = new self();
+
+        $self->url = $url;
+        $self->files = $files;
+
+        return $self;
+    }
+
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return UploadedFileDto[]
+     */
+    public function getFiles(): array
+    {
+        return $this->files;
+    }
+}

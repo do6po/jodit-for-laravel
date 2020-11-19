@@ -2,10 +2,12 @@
     "name": "do6po/laravel-jodit",
     "description": "An easy way to use the Jodit editor with your Laravel Api service.",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "php": "^7.4",
         "ext-json": "*",
+        "illuminate/http": "^6|^7",
+        "illuminate/cache": "^6|^7",
         "illuminate/filesystem": "^6|^7"
     },
     "require-dev": {
@@ -23,7 +25,7 @@
             "email": "helvisbox@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Do6po\\LaravelJodit\\": "src/"
@@ -41,9 +43,7 @@
         "laravel": {
             "providers": [
                 "Do6po\\LaravelJodit\\Providers\\JoditServiceProvider"
-            ],
-            "aliases": {
-            }
+            ]
         }
     }
 }

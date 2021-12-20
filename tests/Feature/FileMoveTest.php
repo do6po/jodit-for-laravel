@@ -3,9 +3,9 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FileMove;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @group FileBrowser
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class FileMoveTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_move_folder_success()
+    public function test_it_move_folder_success(): void
     {
         $file = 'newfile1';
         $content = 'New file content';
@@ -52,7 +52,7 @@ class FileMoveTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($newFilePath));
     }
 
-    public function test_it_has_move_error_for_exists_file()
+    public function test_it_has_move_error_for_exists_file(): void
     {
         $file = 'file.txt';
         $content = 'New file content';
@@ -88,7 +88,7 @@ class FileMoveTest extends AbstractFileBrowserTest
             );
     }
 
-    public function test_it_has_error_if_path_for_move_is_under_root()
+    public function test_it_has_error_if_path_for_move_is_under_root(): void
     {
         $file = 'file.txt';
         $this->fileBrowser->makeFile($file, 'some file content text');
@@ -118,7 +118,7 @@ class FileMoveTest extends AbstractFileBrowserTest
         $this->assertFalse(Storage::exists($file));
     }
 
-    public function test_it_get_unauthorized_error()
+    public function test_it_get_unauthorized_error(): void
     {
         Config::set('jodit.need_auth', true);
 

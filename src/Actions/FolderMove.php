@@ -17,7 +17,7 @@ class FolderMove extends AbstractFileBrowserAction
         return $this->addError(__('Moving directories is not possible!'));
     }
 
-    public function response()
+    public function response(): FileActionErrorResource
     {
         return FileActionErrorResource::make($this->getErrors());
     }

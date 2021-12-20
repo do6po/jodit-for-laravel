@@ -6,30 +6,21 @@ use Illuminate\Contracts\Support\Arrayable;
 
 final class FolderDto implements Arrayable
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
-    /**
-     * @var string
-     */
-    private $baseUrl;
+    private string $baseUrl;
 
-    /**
-     * @var string|null
-     */
-    private $path;
+    private ?string $path;
 
     /**
      * @var FileDto[]
      */
-    private $files;
+    private array $files;
 
     /**
      * @var string[]
      */
-    private $subFolders;
+    private array $subFolders;
 
     /**
      * @param string $name
@@ -68,7 +59,7 @@ final class FolderDto implements Arrayable
         );
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'baseurl' => $this->getBaseUrl(),
@@ -85,7 +76,7 @@ final class FolderDto implements Arrayable
 
     public function hasPath(): bool
     {
-        return !!$this->path;
+        return (bool)$this->path;
     }
 
     public function getPath(): string
@@ -101,14 +92,13 @@ final class FolderDto implements Arrayable
         return $this->files;
     }
 
-    public function getName(): string
-    {
-        return $this->name ?? '.';
-    }
-
     public function getSubFolders(): array
     {
         return $this->subFolders;
     }
 
+    public function getName(): string
+    {
+        return $this->name ?? '.';
+    }
 }

@@ -20,7 +20,7 @@ class FileUploadRemoteAction extends AbstractFileUploadAction
         return $this;
     }
 
-    public function response()
+    public function response(): FileUploadResource
     {
         return FileUploadResource::make($this->remoteFiles);
     }

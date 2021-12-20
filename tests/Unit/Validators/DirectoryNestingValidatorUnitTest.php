@@ -16,14 +16,14 @@ class DirectoryNestingValidatorUnitTest extends UnitTestCase
      * @param $expected
      * @dataProvider itValidateNestingPathDataProvider
      */
-    public function test_it_validate_nesting_path($path, $nestingLimit, $expected)
+    public function test_it_validate_nesting_path($path, $nestingLimit, $expected): void
     {
         $validator = new DirectoryNestingValidator($nestingLimit);
 
         $this->assertEquals($expected, $validator->passes('attribute', $path));
     }
 
-    public function itValidateNestingPathDataProvider()
+    public function itValidateNestingPathDataProvider(): array
     {
         return [
             '2 allowed, 1 passed' => ['/path', 2, true],

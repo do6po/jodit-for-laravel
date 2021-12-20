@@ -21,7 +21,7 @@ class FolderRemove extends AbstractFileBrowserAction
         return $this;
     }
 
-    public function response()
+    public function response(): SuccessActionResource
     {
         return SuccessActionResource::make([]);
     }

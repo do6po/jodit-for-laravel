@@ -3,17 +3,13 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderRemove;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @group FileBrowser
  */
 class FolderRemoveTest extends AbstractFileBrowserTest
 {
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_delete_directory_success()
+    public function test_it_delete_directory_success(): void
     {
         $deletingDir1 = 'deletingDir1';
 
@@ -42,10 +38,7 @@ class FolderRemoveTest extends AbstractFileBrowserTest
         $this->assertFalse($this->fileBrowser->exists($deletingDir1));
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_remove_sub_folder_success()
+    public function test_it_remove_sub_folder_success(): void
     {
         $sub = 'sub1';
         $this->fileBrowser->makeDirectory($sub);

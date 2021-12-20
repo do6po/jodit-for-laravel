@@ -3,7 +3,6 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderCreate;
-use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -11,10 +10,7 @@ use Illuminate\Support\Facades\Config;
  */
 class FolderCreateTest extends AbstractFileBrowserTest
 {
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_create_directory_success()
+    public function test_it_create_directory_success(): void
     {
         $newDirectory = 'newDirectory';
 
@@ -46,10 +42,7 @@ class FolderCreateTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($newDirectory));
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_create_sub_directory_success()
+    public function test_it_create_sub_directory_success(): void
     {
         $path = 'dir1';
         $this->fileBrowser->makeDirectory($path);
@@ -85,10 +78,7 @@ class FolderCreateTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($fullDirPath));
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_has_some_max_nesting_level()
+    public function test_it_has_some_max_nesting_level(): void
     {
         Config::set('jodit.nesting_limit', 1);
 

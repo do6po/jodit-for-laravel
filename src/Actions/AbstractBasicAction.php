@@ -18,7 +18,7 @@ abstract class AbstractBasicAction
 
     public function hasErrors(): bool
     {
-        return !!count($this->errors);
+        return (bool)count($this->errors);
     }
 
     protected function getPath(): string

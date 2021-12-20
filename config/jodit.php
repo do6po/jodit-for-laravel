@@ -77,7 +77,7 @@ return [
     'routes' => [
         'middleware' => env('JODIT_FILE_BROWSER_MIDDLEWARE', 'api'),
 
-        'prefix' => env('JODIT_FILE_BROWSER_PATH_PREFIX', null),
+        'prefix' => env('JODIT_FILE_BROWSER_PATH_PREFIX'),
 
         'upload_path' => env('JODIT_FILE_BROWSER_UPLOAD_PATH', 'jodit/upload'),
         'browse_path' => env('JODIT_FILE_BROWSER_BROWSE_PATH', 'jodit/browse'),

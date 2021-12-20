@@ -6,7 +6,6 @@ use Illuminate\Contracts\Validation\Rule;
 
 abstract class AbstractPathValidator implements Rule
 {
-
     protected function getDirNesting(string $value): int
     {
         $dirs = 0;

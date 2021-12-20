@@ -2,10 +2,9 @@
 
 namespace Do6po\LaravelJodit\Tests\Feature;
 
-use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Http\Response;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Config;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @group FileBrowser
@@ -13,7 +12,7 @@ use Illuminate\Support\Facades\Config;
 class FileUploadTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_try_to_upload_image_and_has_unauthorized_error()
+    public function test_it_try_to_upload_image_and_has_unauthorized_error(): void
     {
         Config::set('jodit.need_auth', true);
 
@@ -32,7 +31,7 @@ class FileUploadTest extends AbstractFileBrowserTest
             ->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 
-    public function test_it_upload_image_success()
+    public function test_it_upload_image_success(): void
     {
         $fileName = 'image-name.jpg';
         $file = UploadedFile::fake()->image($fileName);
@@ -59,7 +58,7 @@ class FileUploadTest extends AbstractFileBrowserTest
      * @param $expected
      * @dataProvider uploadDifferentFormatsDataProvider
      */
-    public function test_it_upload_different_file_success($fileName, $expected)
+    public function test_it_upload_different_file_success($fileName, $expected): void
     {
         $file = UploadedFile::fake()->create($fileName);
 
@@ -80,7 +79,7 @@ class FileUploadTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($expected));
     }
 
-    public function uploadDifferentFormatsDataProvider()
+    public function uploadDifferentFormatsDataProvider(): array
     {
         return [
             ['file-name.txt', 'file-name.txt'],

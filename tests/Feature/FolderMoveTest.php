@@ -3,14 +3,10 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderMove;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 class FolderMoveTest extends AbstractFileBrowserTest
 {
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_move_folder_to_other_folder_success()
+    public function test_it_move_folder_to_other_folder_success(): void
     {
         $dir1 = 'dir1';
         $dir2 = 'dir2';

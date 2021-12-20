@@ -3,7 +3,6 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FileRemove;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @group FileBrowser
@@ -11,7 +10,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 class FileRemoveTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_delete_file_success()
+    public function test_it_delete_file_success(): void
     {
         $file = 'deletingFile.txt';
         $content = 'File content for delete';
@@ -40,7 +39,7 @@ class FileRemoveTest extends AbstractFileBrowserTest
         $this->assertFalse($this->fileBrowser->exists($file));
     }
 
-    public function test_it_remove_file_from_sub_folder_success()
+    public function test_it_remove_file_from_sub_folder_success(): void
     {
         $sub = 'sub1';
         $this->fileBrowser->makeDirectory($sub);

@@ -15,7 +15,7 @@ class PathValidatorUnitTest extends UnitTestCase
      * @param $expected
      * @dataProvider itValidatePathDataProvider
      */
-    public function test_it_validate_path($value, $expected)
+    public function test_it_validate_path($value, $expected): void
     {
         $validator = new PathValidator();
 

@@ -40,7 +40,7 @@ final class FileUploadDto
         ?string $path = null,
         ?array $files = [],
         ?string $url = null
-    ) {
+    ): self {
         return new self(
             $source,
             $path,
@@ -61,7 +61,7 @@ final class FileUploadDto
 
     public function hasPath(): bool
     {
-        return !!$this->path;
+        return (bool)$this->path;
     }
 
     public function getAction(): string
@@ -72,5 +72,10 @@ final class FileUploadDto
     public function getFiles(): array
     {
         return $this->files;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
     }
 }

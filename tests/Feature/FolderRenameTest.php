@@ -10,7 +10,7 @@ use Do6po\LaravelJodit\Actions\FolderRename;
 class FolderRenameTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_rename_folder_success()
+    public function test_it_rename_folder_success(): void
     {
         $from = 'deletingDir1';
         $to = 'deletingDir2';
@@ -43,7 +43,7 @@ class FolderRenameTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($to));
     }
 
-    public function test_it_rename_sub_directory_success()
+    public function test_it_rename_sub_directory_success(): void
     {
         $sub = 'sub1';
 
@@ -82,7 +82,7 @@ class FolderRenameTest extends AbstractFileBrowserTest
         $this->assertTrue($this->fileBrowser->exists($toSub));
     }
 
-    public function test_it_rename_file_to_exist_name()
+    public function test_it_rename_file_to_exist_name(): void
     {
         $dir = 'dir';
         $this->fileBrowser->makeDirectory($dir);

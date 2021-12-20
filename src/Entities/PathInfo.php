@@ -11,7 +11,7 @@ final class PathInfo
     {
     }
 
-    public static function byPath(string $path)
+    public static function byPath(string $path): self
     {
         $self = new self();
 

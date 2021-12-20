@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class FolderCreatedResource extends JsonResource
 {
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'success' => true,

@@ -4,15 +4,9 @@ namespace Do6po\LaravelJodit\Dto;
 
 final class UploadedFilesInfoDto
 {
-    /**
-     * @var
-     */
-    private $url;
+    private string $url;
 
-    /**
-     * @var
-     */
-    private $files;
+    private array $files;
 
     private function __construct()
     {

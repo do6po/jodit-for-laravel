@@ -15,12 +15,12 @@ class PathInfoUnitTest extends UnitTestCase
      * @param $expected
      * @dataProvider itGetExtensionSuccessDataProvider
      */
-    public function test_it_get_extension_success($path, $expected)
+    public function test_it_get_extension_success($path, $expected): void
     {
         $this->assertEquals($expected, PathInfo::byPath($path)->getExtension());
     }
 
-    public function itGetExtensionSuccessDataProvider()
+    public function itGetExtensionSuccessDataProvider(): array
     {
         return [
             ['some path/directory/file.extension', 'extension'],

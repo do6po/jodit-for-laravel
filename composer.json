@@ -4,7 +4,7 @@
     "type": "library",
     "version": "1.0.2",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8",
         "ext-json": "*",
         "ext-dom": "*",
         "ext-gd": "*",

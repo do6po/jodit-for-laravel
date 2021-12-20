@@ -45,7 +45,7 @@ abstract class AbstractFileUploadAction extends AbstractBasicAction implements F
     {
         $extension = $this->fileBrowser->getExtension($name);
 
-        if (!in_array($extension, config('jodit.jodit_broken_extension'))) {
+        if (!in_array($extension, config('jodit.jodit_broken_extension'), true)) {
             return $name;
         }
 

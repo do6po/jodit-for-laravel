@@ -3,7 +3,7 @@
 namespace Do6po\LaravelJodit\Commands;
 
 use Illuminate\Console\Command;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 class CreateFileBrowserRoot extends Command
 {

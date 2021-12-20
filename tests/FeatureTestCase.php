@@ -7,7 +7,7 @@ use Orchestra\Testbench\TestCase;
 
 class FeatureTestCase extends TestCase
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             JoditServiceProvider::class,

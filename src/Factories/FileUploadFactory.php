@@ -8,8 +8,6 @@ use Do6po\LaravelJodit\Dto\FileUploadDto;
 class FileUploadFactory
 {
     /**
-     * @param FileUploadDto $dto
-     * @return FileBrowserAction
      * @throws NotFoundActionException
      */
     public function create(FileUploadDto $dto): FileBrowserAction

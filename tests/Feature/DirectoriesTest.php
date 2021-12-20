@@ -10,7 +10,7 @@ use Do6po\LaravelJodit\Actions\Folders;
 class DirectoriesTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_browse_directories_success()
+    public function test_it_browse_directories_success(): void
     {
         $dir1 = 'dir1';
         $dir2 = 'dir2';
@@ -49,7 +49,7 @@ class DirectoriesTest extends AbstractFileBrowserTest
             );
     }
 
-    public function test_it_browse_sub_directories_success()
+    public function test_it_browse_sub_directories_success(): void
     {
         $dir1 = 'dir1';
         $dir2 = 'dir1/dir2';

@@ -21,7 +21,7 @@ class FileUploadActionTest extends AbstractFileBrowserTest
      * @dataProvider itReplaceSpecialCharacterDataProvider
      * @throws ReflectionException
      */
-    public function test_it_replace_special_character($name, $expected)
+    public function test_it_replace_special_character($name, $expected): void
     {
         $dto = FileUploadDto::byParams('default', '');
 
@@ -32,7 +32,7 @@ class FileUploadActionTest extends AbstractFileBrowserTest
         $this->assertEquals($expected, $method->invoke($action, $name));
     }
 
-    public function itReplaceSpecialCharacterDataProvider()
+    public function itReplaceSpecialCharacterDataProvider(): array
     {
         return [
             ['some microsoft xls file.xls', 'some-microsoft-xls-file.xls'],

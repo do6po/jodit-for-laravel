@@ -8,12 +8,9 @@ use ReflectionMethod;
 trait AccessModificationTrait
 {
     /**
-     * @param $object
-     * @param string $methodName
-     * @return ReflectionMethod
      * @throws ReflectionException
      */
-    public function setMethodAsPublic($object, string $methodName)
+    public function setMethodAsPublic($object, string $methodName): ReflectionMethod
     {
         $method = new ReflectionMethod($object, $methodName);
 

@@ -3,18 +3,13 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\Permissions;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @group FileBrowser
  */
 class PermissionsTest extends AbstractFileBrowserTest
 {
-
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_browse_permissions_success()
+    public function test_it_browse_permissions_success(): void
     {
         $this->postJson(
             route('jodit.browse'),

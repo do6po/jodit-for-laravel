@@ -8,8 +8,6 @@ use Do6po\LaravelJodit\Dto\FileBrowserDto;
 class FileManipulationFactory
 {
     /**
-     * @param FileBrowserDto $dto
-     * @return FileBrowserAction
      * @throws NotFoundActionException
      */
     public function create(FileBrowserDto $dto): FileBrowserAction

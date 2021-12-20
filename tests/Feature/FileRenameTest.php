@@ -3,17 +3,13 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FileRename;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @group FileBrowser
  */
 class FileRenameTest extends AbstractFileBrowserTest
 {
-    /**
-     * @throws BindingResolutionException
-     */
-    public function test_it_has_rename_error_for_exists_file()
+    public function test_it_has_rename_error_for_exists_file(): void
     {
         $file = 'file.txt';
 
@@ -40,7 +36,7 @@ class FileRenameTest extends AbstractFileBrowserTest
                     'data' => [
                         'code' => 422,
                         'messages' => [
-                           '/' . $existFile . ' - is already exists!'
+                            '/' . $existFile . ' - is already exists!'
                         ]
                     ],
                 ]

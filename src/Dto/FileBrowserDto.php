@@ -53,7 +53,7 @@ final class FileBrowserDto
         ?string $from = null,
         ?string $name = null,
         ?string $newName = null
-    ) {
+    ): self {
         return new self(
             $action,
             $source,
@@ -66,7 +66,7 @@ final class FileBrowserDto
 
     public function hasName(): bool
     {
-        return !!$this->name;
+        return (bool)$this->name;
     }
 
     public function getName(): string
@@ -91,7 +91,7 @@ final class FileBrowserDto
 
     public function hasPath(): bool
     {
-        return !!$this->path;
+        return (bool)$this->path;
     }
 
     public function getAction(): string

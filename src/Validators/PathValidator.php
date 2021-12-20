@@ -13,7 +13,7 @@ class PathValidator extends AbstractPathValidator
         return $dirs >= $backs;
     }
 
-    public function message()
+    public function message(): string
     {
         return ':attribute - error! ' . __('Can\'t write file below root directory');
     }

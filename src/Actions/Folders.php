@@ -24,7 +24,7 @@ class Folders extends AbstractFileBrowserAction
         return $this;
     }
 
-    private function mapFolders(string $path)
+    private function mapFolders(string $path): void
     {
         $folders = empty($path) ? ['.'] : ['..'];
 
@@ -38,7 +38,7 @@ class Folders extends AbstractFileBrowserAction
         $this->folder = FolderDto::byParams($name, $baseUrl, $folders, [], $path);
     }
 
-    public function response()
+    public function response(): DirectoryResource
     {
         return DirectoryResource::make($this->folder);
     }

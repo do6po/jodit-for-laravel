@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\File;
 
 class FileBrowserStorage
 {
-
     private FilesystemManager $fs;
 
     public function __construct()
@@ -49,7 +48,7 @@ class FileBrowserStorage
      * @param array $options
      * @return bool
      */
-    public function put(string $path, $content, $options = []): bool
+    public function put(string $path, $content, array $options = []): bool
     {
         $path = $this->getFullRoot($path);
 
@@ -94,9 +93,6 @@ class FileBrowserStorage
     }
 
     /**
-     * @param string $fullPathFrom
-     * @param string $fullPathTo
-     * @return bool
      * @throws Exception
      */
     public function moveDirectoryRaw(string $fullPathFrom, string $fullPathTo): bool

@@ -2,7 +2,7 @@
 
 namespace Do6po\LaravelJodit\Actions;
 
-use Cache;
+use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 use Do6po\LaravelJodit\Dto\FileDto;
 use Do6po\LaravelJodit\Dto\FolderDto;

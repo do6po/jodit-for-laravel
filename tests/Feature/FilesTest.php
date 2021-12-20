@@ -3,7 +3,6 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\Files;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 /**
  * @group FileBrowser
@@ -11,7 +10,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 class FilesTest extends AbstractFileBrowserTest
 {
 
-    public function test_it_browse_files_success()
+    public function test_it_browse_files_success(): void
     {
         $str = 'file1.txt';
         $this->fileBrowser->put($str, 'some text');

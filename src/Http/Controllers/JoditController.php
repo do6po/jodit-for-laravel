@@ -20,12 +20,9 @@ class JoditController extends Controller
     }
 
     /**
-     * @param FileUploadRequest $request
-     * @param FileUploadFactory $factory
-     * @return JsonResource
      * @throws NotFoundActionException
      */
-    public function upload(FileUploadRequest $request, FileUploadFactory $factory)
+    public function upload(FileUploadRequest $request, FileUploadFactory $factory): JsonResource
     {
         return $factory
             ->create($request->getDto())
@@ -34,12 +31,9 @@ class JoditController extends Controller
     }
 
     /**
-     * @param FileBrowserRequest $request
-     * @param FileManipulationFactory $factory
-     * @return JsonResource
      * @throws NotFoundActionException
      */
-    public function browse(FileBrowserRequest $request, FileManipulationFactory $factory)
+    public function browse(FileBrowserRequest $request, FileManipulationFactory $factory): JsonResource
     {
         return $factory
             ->create($request->getDto())

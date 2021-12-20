@@ -17,7 +17,7 @@ class FileDto implements Arrayable
 
     private ?string $size;
 
-    public static function byAttributes(array $attributes)
+    public static function byAttributes(array $attributes): self
     {
         $self = new self();
 

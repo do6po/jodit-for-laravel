@@ -11,7 +11,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  */
 class FileUploadResource extends JsonResource
 {
-    public function toArray($request)
+    public function toArray($request): array
     {
         $uploadedFilesInfo = $this->resource;
 
@@ -31,9 +31,7 @@ class FileUploadResource extends JsonResource
     protected function getFiles(UploadedFilesInfoDto $uploadedFilesInfo): array
     {
         $files = array_map(
-            function (UploadedFileDto $fileDto): string {
-                return $fileDto->getName();
-            },
+            static fn(UploadedFileDto $fileDto) => $fileDto->getName(),
             $uploadedFilesInfo->getFiles()
         );
 
@@ -43,9 +41,7 @@ class FileUploadResource extends JsonResource
     protected function getImageVerifications(UploadedFilesInfoDto $uploadedFilesInfo): array
     {
         $isImages = array_map(
-            function (UploadedFileDto $infoDto): bool {
-                return $infoDto->isImage();
-            },
+            static fn(UploadedFileDto $infoDto) => $infoDto->isImage(),
             $uploadedFilesInfo->getFiles()
         );
 

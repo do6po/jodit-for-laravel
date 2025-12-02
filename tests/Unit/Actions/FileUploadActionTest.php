@@ -4,14 +4,14 @@ namespace Do6po\LaravelJodit\Tests\Unit\Actions;
 
 use Do6po\LaravelJodit\Actions\FileUploadAction;
 use Do6po\LaravelJodit\Dto\FileUploadDto;
-use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowserTest;
+use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowser;
 use Do6po\LaravelJodit\Tests\Helpers\Traits\AccessModificationTrait;
 use ReflectionException;
 
 /**
  * @group FileBrowser
  */
-class FileUploadActionTest extends AbstractFileBrowserTest
+class FileUploadActionTest extends AbstractFileBrowser
 {
     use AccessModificationTrait;
 

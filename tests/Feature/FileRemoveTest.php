@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\FileRemove;
 /**
  * @group FileBrowser
  */
-class FileRemoveTest extends AbstractFileBrowserTest
+class FileRemoveTest extends AbstractFileBrowser
 {
 
     public function test_it_delete_file_success(): void

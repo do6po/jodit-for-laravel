@@ -4,7 +4,7 @@ namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderMove;
 
-class FolderMoveTest extends AbstractFileBrowserTest
+class FolderMoveTest extends AbstractFileBrowser
 {
     public function test_it_move_folder_to_other_folder_success(): void
     {

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 
-abstract class AbstractFileBrowserTest extends FeatureTestCase
+abstract class AbstractFileBrowser extends FeatureTestCase
 {
     /**
      * @var FileBrowserStorage

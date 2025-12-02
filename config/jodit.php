@@ -71,7 +71,7 @@ return [
     ],
 
     'middlewares' => [
-        'auth:api',
+        Do6po\LaravelJodit\Http\Middleware\JoditPathSetterMiddleware::class
     ],
 
     'routes' => [

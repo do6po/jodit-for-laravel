@@ -3,7 +3,7 @@
 namespace Do6po\LaravelJodit\Tests\Unit\Services;
 
 use Illuminate\Support\Facades\Config;
-use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowserTest;
+use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowser;
 use Exception;
 use ReflectionException;
 use Do6po\LaravelJodit\Tests\Helpers\Traits\AccessModificationTrait;
@@ -11,7 +11,7 @@ use Do6po\LaravelJodit\Tests\Helpers\Traits\AccessModificationTrait;
 /**
  * @group FileBrowser
  */
-class FileBrowserStorageTest extends AbstractFileBrowserTest
+class FileBrowserStorageTest extends AbstractFileBrowser
 {
     use AccessModificationTrait;
 

@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @group FileBrowser
  */
-class FileUploadTest extends AbstractFileBrowserTest
+class FileUploadTest extends AbstractFileBrowser
 {
 
     public function test_it_try_to_upload_image_and_has_unauthorized_error(): void

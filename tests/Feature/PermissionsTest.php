@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\Permissions;
 /**
  * @group FileBrowser
  */
-class PermissionsTest extends AbstractFileBrowserTest
+class PermissionsTest extends AbstractFileBrowser
 {
     public function test_it_browse_permissions_success(): void
     {

@@ -3,14 +3,17 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FileMove;
+use Do6po\LaravelJodit\Http\Middleware\JoditAuthMiddleware;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use Mockery\MockInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @group FileBrowser
  */
-class FileMoveTest extends AbstractFileBrowserTest
+class FileMoveTest extends AbstractFileBrowser
 {
 
     public function test_it_move_folder_success(): void
@@ -106,7 +109,7 @@ class FileMoveTest extends AbstractFileBrowserTest
             ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson(
                 [
-                    'message' => 'The given data was invalid.',
+                    'message' => 'path - error! Can\'t write file below root directory',
                     'errors' => [
                         'path' => [
                             'path - error! Can\'t write file below root directory'
@@ -121,6 +124,13 @@ class FileMoveTest extends AbstractFileBrowserTest
     public function test_it_get_unauthorized_error(): void
     {
         Config::set('jodit.need_auth', true);
+        $this->mock(
+            JoditAuthMiddleware::class,
+            fn(MockInterface $mock) => $mock
+                ->shouldReceive('handle')
+                ->once()
+                ->andThrow(new AuthenticationException('You shall not pass!'))
+        );
 
         $this->postJson(
             route('jodit.browse'),

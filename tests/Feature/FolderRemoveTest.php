@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\FolderRemove;
 /**
  * @group FileBrowser
  */
-class FolderRemoveTest extends AbstractFileBrowserTest
+class FolderRemoveTest extends AbstractFileBrowser
 {
     public function test_it_delete_directory_success(): void
     {

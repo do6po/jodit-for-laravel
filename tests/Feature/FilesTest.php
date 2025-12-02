@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\Files;
 /**
  * @group FileBrowser
  */
-class FilesTest extends AbstractFileBrowserTest
+class FilesTest extends AbstractFileBrowser
 {
 
     public function test_it_browse_files_success(): void
@@ -31,7 +31,7 @@ class FilesTest extends AbstractFileBrowserTest
                     'data' => [
                         'sources' => [
                             'default' => [
-                                'baseurl' => 'http://localhost/storage/filebrowser/',
+                                'baseurl' => '/storage/filebrowser/',
                                 'path' => '',
                                 'files' => [
                                     [

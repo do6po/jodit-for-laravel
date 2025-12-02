@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\FolderRename;
 /**
  * @group FileBrowser
  */
-class FolderRenameTest extends AbstractFileBrowserTest
+class FolderRenameTest extends AbstractFileBrowser
 {
 
     public function test_it_rename_folder_success(): void

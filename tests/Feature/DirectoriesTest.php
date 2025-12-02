@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\Folders;
 /**
  * @group FileBrowser
  */
-class DirectoriesTest extends AbstractFileBrowserTest
+class DirectoriesTest extends AbstractFileBrowser
 {
 
     public function test_it_browse_directories_success(): void
@@ -35,7 +35,7 @@ class DirectoriesTest extends AbstractFileBrowserTest
                     'data' => [
                         'sources' => [
                             'default' => [
-                                'baseurl' => 'http://localhost/storage/filebrowser/',
+                                'baseurl' => '/storage/filebrowser/',
                                 'path' => '',
                                 'folders' => [
                                     '.',
@@ -74,7 +74,7 @@ class DirectoriesTest extends AbstractFileBrowserTest
                     'data' => [
                         'sources' => [
                             'dir1' => [
-                                'baseurl' => 'http://localhost/storage/filebrowser/dir1',
+                                'baseurl' => '/storage/filebrowser/dir1',
                                 'path' => 'dir1',
                                 'folders' => [
                                     '..',

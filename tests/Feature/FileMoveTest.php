@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @group FileBrowser
  */
-class FileMoveTest extends AbstractFileBrowserTest
+class FileMoveTest extends AbstractFileBrowser
 {
 
     public function test_it_move_folder_success(): void
@@ -106,7 +106,7 @@ class FileMoveTest extends AbstractFileBrowserTest
             ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson(
                 [
-                    'message' => 'The given data was invalid.',
+                    'message' => 'path - error! Can\'t write file below root directory',
                     'errors' => [
                         'path' => [
                             'path - error! Can\'t write file below root directory'

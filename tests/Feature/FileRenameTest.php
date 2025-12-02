@@ -7,7 +7,7 @@ use Do6po\LaravelJodit\Actions\FileRename;
 /**
  * @group FileBrowser
  */
-class FileRenameTest extends AbstractFileBrowserTest
+class FileRenameTest extends AbstractFileBrowser
 {
     public function test_it_has_rename_error_for_exists_file(): void
     {

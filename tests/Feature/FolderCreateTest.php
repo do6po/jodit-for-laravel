@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 /**
  * @group FileBrowser
  */
-class FolderCreateTest extends AbstractFileBrowserTest
+class FolderCreateTest extends AbstractFileBrowser
 {
     public function test_it_create_directory_success(): void
     {

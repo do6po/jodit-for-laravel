@@ -5,6 +5,7 @@ namespace Do6po\LaravelJodit\Actions;
 use Do6po\LaravelJodit\Http\Resources\FileActionErrorResource;
 use Do6po\LaravelJodit\Http\Resources\FolderCreatedResource;
 use Do6po\LaravelJodit\Validators\DirectoryNestingValidator;
+use Illuminate\Support\Facades\Validator;
 
 class FolderCreate extends AbstractFileBrowserAction
 {
@@ -18,10 +19,13 @@ class FolderCreate extends AbstractFileBrowserAction
     {
         $path = $this->getPath();
 
-        $directoryNestingValidator = new DirectoryNestingValidator(config('jodit.nesting_limit'));
-        if (!$directoryNestingValidator->passes('path', $path)) {
-            $this->addError($directoryNestingValidator->message());
+        $validator = Validator::make(
+            ['path' => $path],
+            ['path' => [new DirectoryNestingValidator(config('jodit.nesting_limit'))]]
+        );
 
+        if ($validator->fails()) {
+            $this->addError($validator->errors()->first('path'));
             return $this;
         }
 

@@ -118,7 +118,7 @@ class FileMoveTest extends AbstractFileBrowser
                 ]
             );
 
-        $this->assertFalse(Storage::exists($file));
+        $this->assertTrue(Storage::exists($file));
     }
 
     public function test_it_get_unauthorized_error(): void

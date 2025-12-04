@@ -4,6 +4,7 @@ namespace Do6po\LaravelJodit\Tests\Unit\Validators;
 
 use Do6po\LaravelJodit\Validators\DirectoryNestingValidator;
 use Do6po\LaravelJodit\Tests\UnitTestCase;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * @group FileBrowser
@@ -18,9 +19,12 @@ class DirectoryNestingValidatorUnitTest extends UnitTestCase
      */
     public function test_it_validate_nesting_path($path, $nestingLimit, $expected): void
     {
-        $validator = new DirectoryNestingValidator($nestingLimit);
+        $validator = Validator::make(
+            ['path' => $path],
+            ['path' => [new DirectoryNestingValidator($nestingLimit)]]
+        );
 
-        $this->assertEquals($expected, $validator->passes('attribute', $path));
+        $this->assertEquals($expected, !$validator->errors()->has('path'));
     }
 
     public static function itValidateNestingPathDataProvider(): array

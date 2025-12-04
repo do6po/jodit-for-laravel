@@ -3,14 +3,12 @@
 namespace Do6po\LaravelJodit\Actions;
 
 use Do6po\LaravelJodit\Http\Resources\SuccessActionResource;
-use Exception;
 
 class FileMove extends AbstractFileBrowserAction
 {
 
     /**
-     * @return $this|FileBrowserAction
-     * @throws Exception
+     * @return FileBrowserAction
      */
     public function handle(): FileBrowserAction
     {

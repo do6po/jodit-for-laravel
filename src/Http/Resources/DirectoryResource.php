@@ -12,10 +12,10 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class DirectoryResource extends JsonResource
 {
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return array
      */
-    public function toArray($request): array
+    public function toArray(Request $request): array
     {
         $folder = $this->resource;
 

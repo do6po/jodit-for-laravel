@@ -2,6 +2,8 @@
 
 namespace Do6po\LaravelJodit\Validators;
 
+use Closure;
+
 class DirectoryNestingValidator extends AbstractPathValidator
 {
     private int $maxNesting;
@@ -11,13 +13,10 @@ class DirectoryNestingValidator extends AbstractPathValidator
         $this->maxNesting = $maxNesting;
     }
 
-    public function passes($attribute, $value): bool
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        return $this->maxNesting > $this->getDirNesting($value);
-    }
-
-    public function message()
-    {
-        return __('Maximum directory nesting is :count', ['count' => $this->maxNesting]);
+        if ($this->maxNesting <= $this->getDirNesting($value)) {
+            $fail(__('Maximum directory nesting is :count', ['count' => $this->maxNesting]));
+        }
     }
 }

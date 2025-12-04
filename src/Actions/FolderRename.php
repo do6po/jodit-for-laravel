@@ -14,7 +14,7 @@ class FolderRename extends AbstractFileBrowserAction
     }
 
     /**
-     * @return $this|FileBrowserAction
+     * @return FileBrowserAction
      * @throws Exception
      */
     public function handle(): FileBrowserAction

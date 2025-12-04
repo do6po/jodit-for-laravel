@@ -89,7 +89,7 @@ class FileUploadTest extends AbstractFileBrowser
         $this->assertTrue($this->fileBrowser->exists($expected));
     }
 
-    public function uploadDifferentFormatsDataProvider(): array
+    public static function uploadDifferentFormatsDataProvider(): array
     {
         return [
             ['file-name.txt', 'file-name.txt'],

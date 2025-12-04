@@ -2,9 +2,9 @@
 
 namespace Do6po\LaravelJodit\Validators;
 
-use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-abstract class AbstractPathValidator implements Rule
+abstract class AbstractPathValidator implements ValidationRule
 {
     protected function getDirNesting(string $value): int
     {

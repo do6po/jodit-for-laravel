@@ -32,7 +32,7 @@ class FileUploadActionTest extends AbstractFileBrowser
         $this->assertEquals($expected, $method->invoke($action, $name));
     }
 
-    public function itReplaceSpecialCharacterDataProvider(): array
+    public static function itReplaceSpecialCharacterDataProvider(): array
     {
         return [
             ['some microsoft xls file.xls', 'some-microsoft-xls-file.xls'],

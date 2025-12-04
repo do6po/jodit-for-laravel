@@ -14,8 +14,7 @@ class FileRename extends AbstractFileBrowserAction
     }
 
     /**
-     * @return $this|FileBrowserAction
-     * @throws Exception
+     * @return FileBrowserAction
      */
     public function handle(): FileBrowserAction
     {

@@ -26,7 +26,7 @@ class Files extends AbstractFileBrowserAction
         return $this;
     }
 
-    protected function mapFiles(string $path)
+    protected function mapFiles(string $path): void
     {
         $files = [];
 

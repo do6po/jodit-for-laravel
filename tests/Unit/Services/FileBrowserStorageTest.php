@@ -32,7 +32,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $method->invoke($this->fileBrowser, $path));
     }
 
-    public function itConvertFullPathToRelativeDataProvider(): array
+    public static function itConvertFullPathToRelativeDataProvider(): array
     {
         return [
             [self::FILE_BROWSER_ROOT . DIRECTORY_SEPARATOR . 'relative/path', 'relative/path'],
@@ -56,7 +56,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $method->invoke($this->fileBrowser, $path));
     }
 
-    public function itConvertArrayOfPathsToRelativesDataProvider(): array
+    public static function itConvertArrayOfPathsToRelativesDataProvider(): array
     {
         return [
             [
@@ -85,7 +85,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $this->fileBrowser->getNameByPath($path));
     }
 
-    public function itGetCorrectFolderNameDataProvider(): array
+    public static function itGetCorrectFolderNameDataProvider(): array
     {
         return [
             ['/some/path', 'path'],
@@ -143,7 +143,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $this->fileBrowser->getExtension($path));
     }
 
-    public function itGetExtensionSuccessDataProvider(): array
+    public static function itGetExtensionSuccessDataProvider(): array
     {
         return [
             ['somepath/file.extension', 'extension'],
@@ -165,7 +165,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $this->fileBrowser->getFileName($path));
     }
 
-    public function itGetBasicNameSuccessDataProvider(): array
+    public static function itGetBasicNameSuccessDataProvider(): array
     {
         return [
             ['some/file.name', 'file'],

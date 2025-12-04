@@ -22,7 +22,7 @@ class PathValidatorUnitTest extends UnitTestCase
         $this->assertEquals($expected, $validator->passes('path', $value));
     }
 
-    public function itValidatePathDataProvider(): array
+    public static function itValidatePathDataProvider(): array
     {
         return [
             ['/../', false],

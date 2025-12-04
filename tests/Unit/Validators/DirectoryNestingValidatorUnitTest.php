@@ -23,7 +23,7 @@ class DirectoryNestingValidatorUnitTest extends UnitTestCase
         $this->assertEquals($expected, $validator->passes('attribute', $path));
     }
 
-    public function itValidateNestingPathDataProvider(): array
+    public static function itValidateNestingPathDataProvider(): array
     {
         return [
             '2 allowed, 1 passed' => ['/path', 2, true],

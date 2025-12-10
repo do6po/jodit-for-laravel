@@ -15,7 +15,7 @@ abstract class AbstractFileBrowser extends FeatureTestCase
     /**
      * @var FileBrowserStorage
      */
-    protected $fileBrowser;
+    protected mixed $fileBrowser;
 
     protected function setUp(): void
     {

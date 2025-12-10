@@ -6,21 +6,19 @@ use Do6po\LaravelJodit\Actions\FileUploadAction;
 use Do6po\LaravelJodit\Dto\FileUploadDto;
 use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowser;
 use Do6po\LaravelJodit\Tests\Helpers\Traits\AccessModificationTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use ReflectionException;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FileUploadActionTest extends AbstractFileBrowser
 {
     use AccessModificationTrait;
 
     /**
-     * @param $name
-     * @param $expected
-     * @dataProvider itReplaceSpecialCharacterDataProvider
      * @throws ReflectionException
      */
+    #[DataProvider('itReplaceSpecialCharacterDataProvider')]
     public function test_it_replace_special_character($name, $expected): void
     {
         $dto = FileUploadDto::byParams('default', '');

@@ -3,10 +3,9 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderRename;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FolderRenameTest extends AbstractFileBrowser
 {
 

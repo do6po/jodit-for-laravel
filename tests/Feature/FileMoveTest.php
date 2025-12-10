@@ -8,11 +8,10 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Group;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FileMoveTest extends AbstractFileBrowser
 {
 

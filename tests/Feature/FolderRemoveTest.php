@@ -3,10 +3,9 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderRemove;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FolderRemoveTest extends AbstractFileBrowser
 {
     public function test_it_delete_directory_success(): void

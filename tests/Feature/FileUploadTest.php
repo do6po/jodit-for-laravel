@@ -7,11 +7,11 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Config;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FileUploadTest extends AbstractFileBrowser
 {
 
@@ -63,11 +63,7 @@ class FileUploadTest extends AbstractFileBrowser
         $this->assertTrue($this->fileBrowser->exists($fileName));
     }
 
-    /**
-     * @param $fileName
-     * @param $expected
-     * @dataProvider uploadDifferentFormatsDataProvider
-     */
+    #[DataProvider('uploadDifferentFormatsDataProvider')]
     public function test_it_upload_different_file_success($fileName, $expected): void
     {
         $file = UploadedFile::fake()->create($fileName);

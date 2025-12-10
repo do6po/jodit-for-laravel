@@ -3,10 +3,9 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\Permissions;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class PermissionsTest extends AbstractFileBrowser
 {
     public function test_it_browse_permissions_success(): void

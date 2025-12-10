@@ -4,10 +4,9 @@ namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\FolderCreate;
 use Illuminate\Support\Facades\Config;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FolderCreateTest extends AbstractFileBrowser
 {
     public function test_it_create_directory_success(): void

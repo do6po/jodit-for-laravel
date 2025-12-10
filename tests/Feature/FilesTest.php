@@ -3,10 +3,9 @@
 namespace Do6po\LaravelJodit\Tests\Feature;
 
 use Do6po\LaravelJodit\Actions\Files;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FilesTest extends AbstractFileBrowser
 {
 

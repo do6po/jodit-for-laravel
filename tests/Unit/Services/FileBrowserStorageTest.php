@@ -5,12 +5,12 @@ namespace Do6po\LaravelJodit\Tests\Unit\Services;
 use Illuminate\Support\Facades\Config;
 use Do6po\LaravelJodit\Tests\Feature\AbstractFileBrowser;
 use Exception;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use ReflectionException;
 use Do6po\LaravelJodit\Tests\Helpers\Traits\AccessModificationTrait;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class FileBrowserStorageTest extends AbstractFileBrowser
 {
     use AccessModificationTrait;
@@ -18,11 +18,9 @@ class FileBrowserStorageTest extends AbstractFileBrowser
     public const FILE_BROWSER_ROOT = '/some/path';
 
     /**
-     * @param $path
-     * @param $expected
-     * @dataProvider itConvertFullPathToRelativeDataProvider
      * @throws ReflectionException
      */
+    #[DataProvider('itConvertFullPathToRelativeDataProvider')]
     public function test_it_convert_full_path_to_relative($path, $expected): void
     {
         Config::set('jodit.root', self::FILE_BROWSER_ROOT);
@@ -32,7 +30,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $method->invoke($this->fileBrowser, $path));
     }
 
-    public function itConvertFullPathToRelativeDataProvider(): array
+    public static function itConvertFullPathToRelativeDataProvider(): array
     {
         return [
             [self::FILE_BROWSER_ROOT . DIRECTORY_SEPARATOR . 'relative/path', 'relative/path'],
@@ -42,11 +40,9 @@ class FileBrowserStorageTest extends AbstractFileBrowser
     }
 
     /**
-     * @param $path
-     * @param $expected
      * @throws ReflectionException
-     * @dataProvider itConvertArrayOfPathsToRelativesDataProvider
      */
+    #[DataProvider('itConvertArrayOfPathsToRelativesDataProvider')]
     public function test_it_convert_array_of_paths_to_relatives($path, $expected): void
     {
         Config::set('jodit.root', self::FILE_BROWSER_ROOT);
@@ -56,7 +52,7 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertEquals($expected, $method->invoke($this->fileBrowser, $path));
     }
 
-    public function itConvertArrayOfPathsToRelativesDataProvider(): array
+    public static function itConvertArrayOfPathsToRelativesDataProvider(): array
     {
         return [
             [
@@ -74,18 +70,13 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         ];
     }
 
-    /**
-     * @param $path
-     * @param $expected
-     *
-     * @dataProvider itGetCorrectFolderNameDataProvider
-     */
+    #[DataProvider('itGetCorrectFolderNameDataProvider')]
     public function test_it_get_correct_folder_name($path, $expected): void
     {
         $this->assertEquals($expected, $this->fileBrowser->getNameByPath($path));
     }
 
-    public function itGetCorrectFolderNameDataProvider(): array
+    public static function itGetCorrectFolderNameDataProvider(): array
     {
         return [
             ['/some/path', 'path'],
@@ -133,17 +124,13 @@ class FileBrowserStorageTest extends AbstractFileBrowser
         $this->assertTrue($this->fileBrowser->exists($newFilePath));
     }
 
-    /**
-     * @param $path
-     * @param $expected
-     * @dataProvider itGetExtensionSuccessDataProvider
-     */
+    #[DataProvider('itGetExtensionSuccessDataProvider')]
     public function test_it_get_extension_success($path, $expected): void
     {
         $this->assertEquals($expected, $this->fileBrowser->getExtension($path));
     }
 
-    public function itGetExtensionSuccessDataProvider(): array
+    public static function itGetExtensionSuccessDataProvider(): array
     {
         return [
             ['somepath/file.extension', 'extension'],
@@ -155,17 +142,15 @@ class FileBrowserStorageTest extends AbstractFileBrowser
     }
 
     /**
-     * @param $path
-     * @param $expected
-     * @dataProvider itGetBasicNameSuccessDataProvider
      * @throws Exception
      */
+    #[DataProvider('itGetBasicNameSuccessDataProvider')]
     public function test_it_get_basic_name_success($path, $expected): void
     {
         $this->assertEquals($expected, $this->fileBrowser->getFileName($path));
     }
 
-    public function itGetBasicNameSuccessDataProvider(): array
+    public static function itGetBasicNameSuccessDataProvider(): array
     {
         return [
             ['some/file.name', 'file'],

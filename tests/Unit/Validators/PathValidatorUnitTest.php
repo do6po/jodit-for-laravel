@@ -4,25 +4,25 @@ namespace Do6po\LaravelJodit\Tests\Unit\Validators;
 
 use Do6po\LaravelJodit\Validators\PathValidator;
 use Do6po\LaravelJodit\Tests\UnitTestCase;
+use Illuminate\Support\Facades\Validator;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group FileBrowser
- */
+#[Group('FileBrowser')]
 class PathValidatorUnitTest extends UnitTestCase
 {
-    /**
-     * @param $value
-     * @param $expected
-     * @dataProvider itValidatePathDataProvider
-     */
+    #[DataProvider('itValidatePathDataProvider')]
     public function test_it_validate_path($value, $expected): void
     {
-        $validator = new PathValidator();
+        $validator = Validator::make(
+            ['path' => $value],
+            ['path' => [new PathValidator()]]
+        );
 
-        $this->assertEquals($expected, $validator->passes('path', $value));
+        $this->assertEquals($expected, !$validator->errors()->has('path'));
     }
 
-    public function itValidatePathDataProvider(): array
+    public static function itValidatePathDataProvider(): array
     {
         return [
             ['/../', false],

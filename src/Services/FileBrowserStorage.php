@@ -44,11 +44,11 @@ class FileBrowserStorage
 
     /**
      * @param string $path
-     * @param File|string $content
+     * @param string|File $content
      * @param array $options
      * @return bool
      */
-    public function put(string $path, $content, array $options = []): bool
+    public function put(string $path, File|string $content, array $options = []): bool
     {
         $path = $this->getFullRoot($path);
 
